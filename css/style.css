@@ -1,0 +1,241 @@
+@charset "utf-8";
+/* Reset Browser, diese Definitionen setzen die Browser zurück */
+
+* { margin:0; padding:0; outline:none;} 
+
+/*  Hier beginnt der eigentliche css Teil, der die Seite definiert */
+
+html, body	{
+	width: 100%;	/* um das Hintergrundbild auf 100% setzen zu können muss man den body und  */
+	height: 100%;	/* die html ebenfalls auf 100% setzen, ansonsten greift die #background nicht */
+}
+body	{
+	font:12px Tahoma;
+	color: #333;
+}
+#background    {
+	width: 100%;			/* setzt das Hintergrund auf 100% */
+	height:100%;			/* setzt das Hintergrundauf 100% */
+	position: absolute;		/* absolute Positionierung um das Hintergrund oben links festzusetzen */
+	top: 0px;				/* Hintergrund oben verankern */
+	left: 0px;				/* Hintergrund links verankern */
+	z-index: 1;				/* Hintergrund liegt in der Hirarchie ganz unten */
+}
+#background img	{
+	width: 100%;			/* Hintergrundbild auf 100% stellen */
+	height: 100%;			/* Hintergrundbild auf 100% stellen */
+	position: fixed;		/* Hintergrundbild bleibt fest an seiner Position */
+}
+#whitedots	{
+	background: url('img/dots.png') repeat;    		/* die Hintergrundbilder sollen mit leicht */
+	width: 100%;										/* unscharf wirken, dass erreicht man mit */
+	height: 100%;										/* den dots.*/
+	position: absolute;
+	z-index: 10;				
+}
+
+#wrapper	{
+	width: 100%;			/* der wrapper hat eine Gesamtgrösse von 100% */
+	position: absolute;
+	z-index: 20;				/* durch den z-index kann die Reihenfolge der Elemente bestimmt werden */
+}
+
+#topbar	{
+	width: 100%;
+	height: 21px;			/* Höhe ist 25px minus padding ist gleich 22px*/
+	background: #000;
+	color: #CCC;
+	padding-top: 4px;		/* was bei padding drauf kommt an Pixel muss an der height abgezogen werden*/
+	margin-bottom: 80px;	/* erzeugt einen Abstand von 80px zum nächsten Element (zur div navibar) */
+}
+#topbar	ul	{
+	list-style: none;		/* keine Listenfunktionenen in der Liste der topbar*/
+	width: 300px;			/* die Breite wird auf 200px begrenzt */
+	display: inline;		/* zwingt das Element dazu, keinen Absatz zu bilden */
+}
+#topbar li	{
+	display: inline;		/* Liste der Topbar wird horizontal ausgerichtet */
+}
+#topbar li 	a	{
+	color: #CCC;			/* ist die Linkfarbe */
+	text-decoration: none;	/* schaltet den Unterstrich unter dem Link ab */
+	padding-right: 6px;		/* Abstand zwischen den Links definiereen */
+}
+#topbar li 	a:hover		{
+	text-decoration: underline;			/* pseudo Klasse hover erhält einen Unterstrich */
+}
+#topbar p	{
+	display: inline;
+	float: right;				/* lässt den Text nach rechts rutschen */
+}
+#topbar p strong	{
+	color: #fff;				/* der strong im Text bekommt eine andere Farbe */
+}
+
+.container	{
+	width: 998px;			/* class container dient zur Einstellung des Inhalts im wrapper, da der wrapper*/
+	margin: auto;			/* eine Breite von 998px hat (Grösse Browserfenster) ist die Breite des containers
+								auch 998, die margin: auto, zentriert den container im wrapper mittig */
+}
+
+#navibar	{
+	margin-bottom: 50px;	/* der Abstand zum unteren Element */
+}
+
+#logoarea	{
+	width: 260px;
+	height: 100px;
+	float: left;
+}
+#navigation	{
+	width: 738px;
+	height: 100px;
+	float: left;
+	list-style: none;
+	background:url('img/white-30.png') repeat ;
+}
+#navigation a	{
+	color: #030000;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	height: 25px;
+	padding: 75px 39px 0 39px;
+	float: left;
+}
+#navigation a:hover	{
+	background:url('imag/black-40.png') repeat;
+	color:#fff;
+}
+
+#logo	a	{
+	background: url('img/kentrup_logo_web.png') no-repeat;
+	width: 260px;				/* höhe und breite in Hintergundbilder greifen nur wenn display block enthalten ist */
+	height: 100px;
+	display: block;				/* wird gebraucht, damit die width und die height im background greift */
+	text-indent: -999999px;		/* verschiebt den h1 Text aus der Website */
+}
+
+#content	{
+	margin-bottom: 55px;
+}
+#contentSidebar	{
+	width: 220px;				/* die breite ist 260px - 2 * 20px vom padding, !nicht vergessen! */
+	float: left;
+	background: url('img/white-40.png') repeat;
+	padding:20px;
+	margin-top: 35px;
+}
+#contentSidebar	h4{
+	font-size: 12px;
+	color: #34398e;
+	margin-bottom: 25px;
+}
+
+#contentSidebar	p	{
+	font-size: 11px;
+	color: #34398e;
+	line-height: 130%;
+	margin-bottom: 20px;
+}
+
+#contentMain	{
+	width: 698px;
+	float: left;
+	padding: 20px 20px 0px 20px;
+	background: url('img/white-90.png') repeat;
+	border-bottom: 4px solid #e84648;
+	position: relative;	/* mit position: relativ können sich untergeordnete Elemente am Container contentMain ausrichten*/
+}
+#contentMain h3	{
+	font-size: 18px;		/* die Schrift wurde über cufon eingebunden und wird hier formatiert */
+	color: #000000;
+	margin-bottom:5px;
+}
+#contentMain h2	{
+	font-size: 30px;
+	color: #333399;
+	margin-bottom: 20px;
+}
+#contentMain p	{
+	margin-bottom: 20px;
+	line-height: 150%;		/* der Abstand der linien im Text wird vergrössert */
+}
+#contentMain p.sonderp	{
+	margin-bottom: 5px;
+	margin-top: 25px;
+	font-size: 16px;
+}
+#contentMain li	{
+	margin-top: 4px;
+}
+
+#col_left_ul	{
+	list-style: disc;
+	font-size: 14px;
+	padding: 5px;
+	margin-left: 40px;
+}
+#col_left_unterpunkt	{
+	list-style: circle;
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+#contentMain img.border	{
+	border: 1px solid #9cb1d1;
+	padding: 1px;
+	margin-left:50px;
+}
+
+.button	{
+	background:url('img/white-90.png') repeat;
+	color: #000;
+	text-decoration: none;
+	display: block;
+	padding: 6px 12px;
+	position: absolute;
+	right: 20px;
+	top: -25px;
+	font-size: 11px;
+}
+.col	{
+	width: 48%;			/* definiert die Grösse der Spalten */
+}
+.left	{
+	float: left;		/* da die col mit left und right unterteilt ist, bewirkt dieser Befehl die Ausrichtung */
+	margin-left: 20px;
+}
+
+.right	{
+	float:right;		/* diese Einteilung ist wichtig und ergibt sich aus dem col right und col left */
+}
+.impressum	{
+	width:  100%;
+}
+
+#partner	{
+	width: 698px;			/* breite abzüglich 20px von padding ! wichtig ! */
+	height: 70px;			/* höhe ist 80px, da padding 10px abzieht muss die höhe angepasst werden */
+	background:url('img/white-90.png') repeat;
+	margin-left: 260px;
+	border-bottom: 4px solid #e84648;
+	margin-bottom: 20px;
+	position: relative;
+	padding: 10px 0 0 40px;
+}
+#partner img	{
+	padding-right: 65px;
+}
+
+
+
+
+
+
+
+
+
+
+
